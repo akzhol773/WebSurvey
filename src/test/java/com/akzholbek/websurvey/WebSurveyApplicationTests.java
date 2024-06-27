@@ -1,4 +1,4 @@
-package org.example.websurvey;
+package com.akzholbek.websurvey;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

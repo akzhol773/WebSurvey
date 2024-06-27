@@ -1,4 +1,4 @@
-package org.example.websurvey.entity;
+package com.akzholbek.websurvey.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

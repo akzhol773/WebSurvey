@@ -1,6 +1,6 @@
-package org.example.websurvey.service;
+package com.akzholbek.websurvey.service;
 
-import org.example.websurvey.entity.Product;
+import com.akzholbek.websurvey.entity.Product;
 
 import java.util.List;
 import java.util.Optional;
