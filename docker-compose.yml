@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16.3
+    container_name: webSurveyPostgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass1234!
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5435:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
