@@ -16,8 +16,12 @@ public class WebSurveyApplication implements CommandLineRunner {
         SpringApplication.run(WebSurveyApplication.class, args);
     }
 
+//    todo choose the domain of packages
+
+
     @Override
     public void run(String... args) {
+
         // Create
         Product product = new Product();
         product.setName("Test Product");
