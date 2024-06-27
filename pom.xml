@@ -52,8 +52,8 @@
         <!-- https://mvnrepository.com/artifact/org.flywaydb/flyway-database-postgresql -->
         <dependency>
             <groupId>org.flywaydb</groupId>
-            <artifactId>flyway-database-postgresql</artifactId>
-            <version>10.15.0</version>
+            <artifactId>flyway-core</artifactId>
+            <version>9.22.0 </version>
             <scope>runtime</scope>
         </dependency>
 
