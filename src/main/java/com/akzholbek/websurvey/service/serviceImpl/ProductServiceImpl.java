@@ -1,9 +1,9 @@
-package org.example.websurvey.service.serviceImpl;
+package com.akzholbek.websurvey.service.serviceImpl;
 
+import com.akzholbek.websurvey.repository.ProductRepository;
+import com.akzholbek.websurvey.service.ProductService;
 import lombok.AllArgsConstructor;
-import org.example.websurvey.entity.Product;
-import org.example.websurvey.repository.ProductRepository;
-import org.example.websurvey.service.ProductService;
+import com.akzholbek.websurvey.entity.Product;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

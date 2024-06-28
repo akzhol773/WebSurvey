@@ -1,6 +1,6 @@
-package org.example.websurvey.repository;
+package com.akzholbek.websurvey.repository;
 
-import org.example.websurvey.entity.Product;
+import com.akzholbek.websurvey.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
