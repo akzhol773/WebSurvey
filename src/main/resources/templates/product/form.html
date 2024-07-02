@@ -1,118 +1,28 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .container {
-            background: #fff;
-            padding: 20px 40px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        h1 {
-            color: #5a5a5a;
-            font-size: 2em;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        form div {
-            margin-bottom: 15px;
-        }
-
-        label {
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1em;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        a {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            color: #4CAF50;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 15px;
-            }
-
-            h1 {
-                font-size: 1.5em;
-            }
-
-            button {
-                width: 100%;
-                padding: 12px;
-            }
-        }
-    </style>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="en">
+<head th:replace="fragments/header">
 </head>
 <body>
-<div class="container">
-    <h1>Product Form</h1>
+<nav th:replace="fragments/navbar"></nav>
+<div class="container bg-white  p-4 px-5 shadow-lg rounded w-50 p-3">
+    <h1 class="text-center text-uppercase font-weight-bold text-info mb-4">Product Form</h1>
     <form th:action="@{/product/save}" th:object="${product}" method="post">
         <input type="hidden" th:field="*{id}" />
-        <div>
+        <div class="form-group">
             <label for="name">Name:</label>
-            <input type="text" id="name" th:field="*{name}" required>
+            <input type="text" class="form-control" id="name" th:field="*{name}" required placeholder="Product name...">
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea type="text" class="form-control" id="description" th:field="*{description}" required placeholder="Description..." rows="3"></textarea>
         </div>
         <div>
-            <label for="description">Description</label>
-            <input type="text" id="description" th:field="*{description}" required>
-        </div>
-        <div>
-            <button type="submit">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
-    <a th:href="@{/product}">Back to List</a>
+    <a th:href="@{/product}" class="btn btn-link">Back to List</a>
 </div>
+<!-- Bootstrap JS and dependencies -->
+<div th:replace="fragments/scripts :: script"></div>
 </body>
 </html>
-

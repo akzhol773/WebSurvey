@@ -1,110 +1,18 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product List</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .container {
-            background: #fff;
-            padding: 20px 40px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        h1 {
-            color: #5a5a5a;
-            font-size: 2em;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        a {
-            color: #4CAF50;
-            text-decoration: none;
-            margin-right: 10px;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1em;
-            margin-top: 20px;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 15px;
-            }
-
-            h1 {
-                font-size: 1.5em;
-            }
-
-            table, th, td {
-                font-size: 0.9em;
-            }
-
-            button {
-                width: 100%;
-                padding: 12px;
-            }
-        }
-
-
-    </style>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragments/header">
 </head>
-<body>
-<div class="container">
-    <h1>Product List</h1>
-    <table>
-        <thead>
+<body >
+<nav th:replace="fragments/navbar"></nav>
+<div class="container bg-white  p-4 px-5 shadow-lg rounded w-75 p-3">
+    <h1 class="text-center text-uppercase font-weight-bold text-info mb-4">Product List</h1>
+    <table class="table table-bordered table-hover table-sm">
+        <thead class="table-primary">
         <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Actions</th>
+            <th scope="col" class="col-id">ID</th>
+            <th scope="col" class="col-name">Name</th>
+            <th scope="col" class="col-des">Description</th>
+            <th scope="col" class="col-actions">Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -113,13 +21,14 @@
             <td th:text="${product.name}">Example Name</td>
             <td th:text="${product.description}">Good product</td>
             <td>
-                <a th:href="@{/product/edit/{id}(id=${product.id})}">Edit</a>
-                <a th:href="@{/product/delete/{id}(id=${product.id})}">Delete</a>
+                <a th:href="@{/product/edit/{id}(id=${product.id})}" class="btn btn-outline-primary">Edit</a>
+                <a th:href="@{/product/delete/{id}(id=${product.id})}" class="btn btn-outline-secondary">Delete</a>
             </td>
         </tr>
         </tbody>
     </table>
-    <a th:href="@{/product/new}" class="add-product-button">Add New Product</a>
+    <a th:href="@{/product/new}" class="btn btn-outline-success">ADD NEW PRODUCT</a>
 </div>
+<div th:replace="fragments/scripts :: script"></div>
 </body>
 </html>
