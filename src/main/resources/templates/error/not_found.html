@@ -1,41 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Not Found</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            color: #dc3545;
-        }
-        p {
-            font-size: 18px;
-        }
-        a.button {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            color: white;
-            background-color: #007bff;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-        a.button:hover {
-            background-color: #0056b3;
-        }
-    </style>
-</head>
+<head th:insert="~{fragments/header}">
 <body>
-<h1>Error 404</h1>
-<p>The product with ID <span th:text="${id}"></span> was not found.</p>
-<a href="/" class="button">Go Home</a>
-<a href="/product" class="button">Go to Product List</a>
+<nav th:insert="~{fragments/navbar}"></nav>
+<div class="container text-center p-5 rounded bg-white shadow-lg">
+    <h1 class="text-danger">Error 404</h1>
+    <p>The product with ID <span th:text="${id}"></span> not found.</p>
+    <a href="/" class="btn btn-outline-primary">Go Home</a>
+    <a href="/product" class="btn btn-outline-info">Go to Product List</a>
+</div>
+
+<div th:insert="~{fragments/scripts :: script}"></div>
 </body>
 </html>
