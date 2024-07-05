@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="en">
-<head th:replace="fragments/header">
+<head th:insert="~{fragments/header}">
 </head>
 <body>
-<nav th:replace="fragments/navbar"></nav>
+<nav th:insert="~{fragments/navbar}"></nav>
 <div class="container bg-white  p-4 px-5 shadow-lg rounded w-50 p-3">
     <h1 class="text-center text-uppercase font-weight-bold text-info mb-4">Product Form</h1>
     <form th:action="@{/product/save}" th:object="${product}" method="post">
@@ -23,6 +23,6 @@
     <a th:href="@{/product}" class="btn btn-link">Back to List</a>
 </div>
 <!-- Bootstrap JS and dependencies -->
-<div th:replace="fragments/scripts :: script"></div>
+<div th:insert="~{fragments/scripts :: script}"></div>
 </body>
 </html>

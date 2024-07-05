@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head th:replace="fragments/header">
+<head th:insert="~{fragments/header}">
 </head>
 <body >
-<nav th:replace="fragments/navbar"></nav>
+<nav th:insert="~{fragments/navbar}"></nav>
 <div class="container bg-white  p-4 px-5 shadow-lg rounded w-75 p-3">
     <h1 class="text-center text-uppercase font-weight-bold text-info mb-4">Product List</h1>
     <table class="table table-bordered table-hover table-sm">
@@ -29,6 +29,6 @@
     </table>
     <a th:href="@{/product/new}" class="btn btn-outline-success">ADD NEW PRODUCT</a>
 </div>
-<div th:replace="fragments/scripts :: script"></div>
+<div th:insert="~{fragments/scripts :: script}"></div>
 </body>
 </html>
